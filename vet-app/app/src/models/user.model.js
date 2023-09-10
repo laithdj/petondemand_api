@@ -44,6 +44,11 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    image: {
+      type: mongoose.Types.ObjectId,
+      index: true,
+      ref: 'Media'
+    },
   },
   {
     timestamps: true,

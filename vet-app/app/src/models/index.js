@@ -5,4 +5,5 @@ module.exports.services = require('./services.model');
 module.exports.freeslots = require('./freeslots.model');
 module.exports.offerServices = require ('./offerServices.model');
 module.exports.Pets = require ('./Pets.model');
+module.exports.Media = require ('./media.model');
 module.exports.BreedTypes = require ('./BreedType.models');

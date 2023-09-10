@@ -5,4 +5,5 @@ module.exports.servicesController = require('./services.controller');
 module.exports.freeslotsController = require('./freeslots.controller');
 module.exports.offerServicesController = require('./offerServices.controller');
 module.exports.petsController = require('./pets.controller');
+module.exports.mediaController = require('./media.controller');
 module.exports.breedTypeController = require('./breedTypes.controller');

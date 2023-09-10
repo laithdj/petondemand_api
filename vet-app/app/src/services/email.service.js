@@ -8,19 +8,19 @@ if (config.env !== 'test') {
   transport
     .verify()
     .then(() => logger.info('Connected to email server'))
-    .catch(() => logger.warn('Unable to connect to email server. Make sure you have configured the SMTP options in .env'));
+    .catch(() => {logger.warn('Unable to connect to email server. Make sure you have configured the SMTP options in .env')});
 }
 
 /**
  * Send an email
  * @param {string} to
  * @param {string} subject
- * @param {string} text
+ * @param {string} html
  * @returns {Promise}
  */
-const sendEmail = async (to, subject, text) => {
-  const msg = { from: config.email.from, to, subject, text };
-  await transport.sendMail(msg);
+const sendEmail = async (to, subject, html) => {
+  const msg = { from: config.email.from, to, subject, html };
+  return await transport.sendMail(msg);
 };
 
 /**
@@ -55,9 +55,22 @@ If you did not create an account, then ignore this email.`;
   await sendEmail(to, subject, text);
 };
 
+/**
+ * Send booking confirmation email
+ * @param {string} to
+ * @returns {Promise}
+ */
+const sendBookingConfirmationEmail = async (to) => {
+  const subject = 'Booking Confirmation Email';
+  const html = `Hello User, <br/> Booking is being confirmed.`;
+  const emailData = await sendEmail(to, subject, html);
+  console.log('emailData', emailData);
+};
+
 module.exports = {
   transport,
   sendEmail,
   sendResetPasswordEmail,
   sendVerificationEmail,
+  sendBookingConfirmationEmail
 };

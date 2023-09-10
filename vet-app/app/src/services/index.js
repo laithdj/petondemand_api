@@ -7,4 +7,5 @@ module.exports.servicesService = require('./services.service');
 module.exports.freeslotsService = require('./freeslots.service');
 module.exports.offerServicesService = require ('./offerServices.service');
 module.exports.petsService = require('./Pets.service');
+module.exports.mediaService = require('./media.service');
 module.exports.breedTypesService = require('./breedType.service');

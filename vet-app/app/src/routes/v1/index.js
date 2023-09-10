@@ -7,6 +7,7 @@ const servicesRoute =require('./services.route');
 const freeslotsRoute = require('./freeslots.route');
 const offerServiceRoute = require('./offerServices.route');
 const petsRoute = require('./pets.route');
+const mediaRoute = require('./media.route');
 const breedTypeRoute = require('./breedTypes.route');
 const config = require('../../config/config');
 
@@ -40,6 +41,10 @@ const defaultRoutes = [
 {
   path: '/pets',
   route: petsRoute,
+},
+{
+  path: '/media',
+  route: mediaRoute,
 },
 
 {
